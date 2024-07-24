@@ -33,7 +33,7 @@ class BoilTheFrogSource(object):
             'end' : end
         }
         response = requests.get('http://labs2.echonest.com/ArtistGraphServer/find_path', 
-            params=params)
+            params=params, timeout=60)
 
         js = response.json()
 
