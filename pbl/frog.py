@@ -1,6 +1,6 @@
 import requests
-import random
 from track_manager import tlib
+import secrets
 
 class BoilTheFrogSource(object):
     '''
@@ -39,7 +39,7 @@ class BoilTheFrogSource(object):
 
         tracks = []
         for artist in js['path']:
-            track = random.choice(artist['songs'])
+            track = secrets.choice(artist['songs'])
             tid = 'spotify:track:' + track['id']
             # TODO fix duration here
             tlib.make_track(tid, track['title'], artist['name'], 180, 'frog')
